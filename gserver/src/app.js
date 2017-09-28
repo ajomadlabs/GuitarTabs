@@ -1,4 +1,4 @@
-//  Calling the Express.js
+// Calling the Express.js
 const express = require('express')
 // Calling the BodyParser
 const bodyParser = require('body-parser')
@@ -6,6 +6,10 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 // Calling the Morgan
 const morgan = require('morgan')
+// Calling the Sequelize
+const {sequelize} = require('./models')
+// Calling the config
+const config = require('./config/config')
 
 // Creating an Express App
 const app = express()
@@ -16,12 +20,13 @@ app.use(bodyParser.json())
 // Allows the app to use cors for accepting data from any domains
 app.use(cors())
 
-// Creating the register endpoint
-app.post('/register', (req, res) => {
-  res.send({
-    message: `Welcome ${req.body.email}! You have been registered!`
-  })
-})
+// Calling the Routes Module
+require('./routes')(app)
 
-// Makes the App listen to port 8081
-app.listen(process.env.PORT || 8081)
+// Connecting the Database using Sequqlize
+sequelize.sync()
+  .then(() => {
+    // Makes the App listen to port 8081
+    app.listen(config.port)
+    console.log(`Server started on port ${config.port}`)
+  })
