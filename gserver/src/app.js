@@ -16,10 +16,10 @@ app.use(bodyParser.json())
 // Allows the app to use cors for accepting data from any domains
 app.use(cors())
 
-// Creating Endpoint by sending a GET request
-app.get('/status', (req, res) => {
+// Creating the register endpoint
+app.post('/register', (req, res) => {
   res.send({
-    message: 'Hello, World'
+    message: `Welcome ${req.body.email}! You have been registered!`
   })
 })
 

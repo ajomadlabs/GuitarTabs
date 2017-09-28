@@ -5,7 +5,7 @@ import axios from 'axios'
 
 // Making it exportable
 export default () => {
-    return axios.create({
-        baseURL: 'http://localhost:8081/'
-    })
+  return axios.create({
+    baseURL: `http://localhost:8081/`
+  })
 }

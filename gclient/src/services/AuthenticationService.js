@@ -5,8 +5,8 @@ import Api from '@/services/Api.js'
 
 // Making it exportable
 export default {
-    // Register Method to send user data
-    register (userdata) {
-        return Api().post('register', userdata)
-    }
+  // Register Method to send user data
+  register (userdata) {
+    return Api().post('register', userdata)
+  }
 }
