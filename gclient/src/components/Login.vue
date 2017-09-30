@@ -15,7 +15,7 @@
         <v-text-field type="password" name="password" label="Password" v-model="password"></v-text-field>
         <br>
         <div class="error" v-model="error">{{error}}</div><br>
-        <v-btn class="blue" v-on:click="register" type="submit" dark>Login</v-btn>
+        <v-btn class="blue" v-on:click="login" type="submit" dark>Login</v-btn>
       </div>
       <!-- End -->
     </v-flex>
@@ -37,9 +37,9 @@ export default {
     }
   },
   methods: {
-    // Register Method
-    // Allows users to register using Email and Password
-    async Login () {
+    // Login Method
+    // Allows users to login using Email and Password
+    async login () {
       try {
         await AuthenticationService.login({
           email: this.email,

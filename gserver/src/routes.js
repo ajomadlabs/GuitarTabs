@@ -6,6 +6,8 @@ const AuthenticationControllerPolicy = require('./policies/AuthenticationControl
 
 // Creating Routes
 module.exports = (app) => {
-// Creating a route for register endpoint
+  // Creating a route for register endpoint
   app.post('/register', AuthenticationControllerPolicy.register, AuthenticationController.register)
+  // Creating a route for login endpoint
+  app.post('/login', AuthenticationController.login)
 }

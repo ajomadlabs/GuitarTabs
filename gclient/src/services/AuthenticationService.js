@@ -8,5 +8,9 @@ export default {
   // Register Method to send user data
   register (userdata) {
     return Api().post('register', userdata)
+  },
+  // Login Method to get user data
+  login (userdata) {
+    return Api().post('login', userdata)
   }
 }
