@@ -5,6 +5,11 @@ const {User} = require('../models')
 const jwt = require('jsonwebtoken')
 // Calling the Config
 const config = require('../config/config')
+
+// Helper Function for returning a jwt Token
+function jwtSignUser (user) {
+  const ONE_WEEK = 60 * 60 *24 * 7
+}
 module.exports = {
   // Defining the register endpoint
   async register (req, res) {
