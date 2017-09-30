@@ -22,10 +22,10 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <v-btn v-on:click="navigateTo({name: 'login'})" flat class="white--text">
+      <v-btn v-if="!$store.state.isUserLoggedIn" v-on:click="navigateTo({name: 'login'})" flat class="white--text">
         Login
       </v-btn> 
-      <v-btn v-on:click="navigateTo({name: 'register'})" flat class="white--text">
+      <v-btn v-if="!$store.state.isUserLoggedIn" v-on:click="navigateTo({name: 'register'})" flat class="white--text">
         Sign Up
       </v-btn>
     </v-toolbar-items>
