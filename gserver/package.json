@@ -15,6 +15,7 @@
     "cors": "^2.8.4",
     "express": "^4.15.5",
     "joi": "^11.1.1",
+    "jsonwebtoken": "^8.0.1",
     "morgan": "^1.9.0",
     "sequelize": "^4.11.3",
     "sqlite3": "^3.1.8"

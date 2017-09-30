@@ -1,7 +1,10 @@
 // Defining the AuthenticationController
 // Calling the User Model
 const {User} = require('../models')
-
+// Callig the JsonWebToken for Authentication
+const jwt = require('jsonwebtoken')
+// Calling the Config
+const config = require('../config/config')
 module.exports = {
   // Defining the register endpoint
   async register (req, res) {
