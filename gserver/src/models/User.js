@@ -1,3 +1,7 @@
+//Calling Promise library
+const Promise = require('bluebird')
+// Calling the bcrypt Module
+const bcrypt = Promise.promisifyAll(require('bcrypt-nodejs'))
 // Defining a module for Models
 module.exports = (sequelize, dataTypes) => {
   // Defining an User Model
