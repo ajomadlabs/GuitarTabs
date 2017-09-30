@@ -6,12 +6,12 @@ const jwt = require('jsonwebtoken')
 // Calling the Config
 const config = require('../config/config')
 
-// Helper Function for returning a jwt Token
+// Helper Function for signing user object and returning a token using JWT
 function jwtSignUser (user) {
   const ONE_WEEK = 60 * 60 *24 * 7
   return jwt.sign(user, config.authentication.jwtSecret, {
     expiresIn: ONE_WEEK
-    
+
   })
 }
 module.exports = {

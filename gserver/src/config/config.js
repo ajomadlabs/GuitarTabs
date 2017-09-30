@@ -12,5 +12,11 @@ module.exports = {
       host: process.env.HOST || 'localhost',
       storage: './guitartab.sqlite'
     }
+  },
+  // Defining a Authentication Key
+  // This function helps in signing the token using a secret string
+  // This helps in checking whether the token is valid or not
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
   }
 }
