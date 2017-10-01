@@ -24,7 +24,7 @@ app.use(cors())
 require('./routes')(app)
 
 // Connecting the Database using Sequqlize
-sequelize.sync()
+sequelize.sync({force: false})
   .then(() => {
     // Makes the App listen to port 8081
     app.listen(config.port)
