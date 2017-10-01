@@ -14,6 +14,7 @@
 
 <script>
 import Panel from '@/components/Panel'
+import SongsService from '@/services/SongsService'
 export default {
   components: {
     Panel
@@ -22,6 +23,9 @@ export default {
     return {
       songs: null
     }
+  },
+  async mounted () {
+    this.songs = await SongsService.index() 
   }
 }
 </script>
