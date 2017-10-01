@@ -2,13 +2,8 @@
 <template> 
   <v-layout>
     <v-flex xs6 offset-xs3>
-      <div class="white elevation-3">
-        <v-toolbar flat dense class="blue" dark>
-          <v-toolbar-title>Register</v-toolbar-title>
-        </v-toolbar>
-      </div>
+      <panel title="Register">
       <!-- Input Styles -->
-      <div class="pl-4 pr-4 pt-2 pb-2">
         <form name="guitar-tabs" autocomplete="off">
           <v-text-field type="email" name="email" label="Email" v-model="email">
           </v-text-field>
@@ -18,7 +13,7 @@
         <br>
         <div class="error" v-model="error">{{error}}</div><br>
         <v-btn class="blue" v-on:click="register" type="submit" dark>Register</v-btn>
-      </div>
+      </panel>
       <!-- End -->
     </v-flex>
   </v-layout>
@@ -30,6 +25,7 @@
 
 // Importing Authentication Service
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 export default {
   data () {
     return {
@@ -53,6 +49,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 

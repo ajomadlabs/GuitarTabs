@@ -2,13 +2,8 @@
 <template> 
   <v-layout>
     <v-flex xs6 offset-xs3>
-      <div class="white elevation-3">
-        <v-toolbar flat dense class="blue" dark>
-          <v-toolbar-title>Login</v-toolbar-title>
-        </v-toolbar>
-      </div>
+      <panel title="Login"> 
       <!-- Input Styles -->
-      <div class="pl-4 pr-4 pt-2 pb-2">
         <v-text-field type="email" name="email" label="Email" v-model="email">
         </v-text-field>
         <br>
@@ -16,7 +11,7 @@
         <br>
         <div class="error" v-model="error">{{error}}</div><br>
         <v-btn class="blue" v-on:click="login" type="submit" dark>Login</v-btn>
-      </div>
+      </panel>
       <!-- End -->
     </v-flex>
   </v-layout>
@@ -28,6 +23,7 @@
 
 // Importing Authentication Service
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 export default {
   data () {
     return {
@@ -51,6 +47,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 
