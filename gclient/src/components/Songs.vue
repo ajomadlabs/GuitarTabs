@@ -17,6 +17,7 @@
               <div class="song-album">
                 {{song.album}}
               </div>
+              <v-btn class="blue white--text" v-on:click="navigateTo({name: 'song', params: {songId: song.id}})">View</v-btn>
             </v-flex>
             <v-flex xs6>
               <img class="album-image" v-bind:src="song.albumImageUrl"/>
