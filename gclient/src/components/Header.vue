@@ -8,16 +8,13 @@
       </span>
     </v-toolbar-title>
 
-    <!-- @TODO: Implement Me -->
-    <!--
     <v-toolbar-items>
 
-      <v-btn flat dark>
+      <v-btn flat class="white--text" v-on:click="navigateTo({name: 'songs'})">
         Browse
       </v-btn>
 
     </v-toolbar-items>
-    -->
 
     <v-spacer></v-spacer>
 
